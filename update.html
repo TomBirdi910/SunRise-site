@@ -73,15 +73,44 @@
     .button:hover {
       background: linear-gradient(45deg, #ff6f6f, #ff3131);
     }
-  </style>
+  
+.menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+  cursor: pointer;
+}
+.submenu-items {
+  display: none;
+  flex-direction: column;
+  padding-left: 15px;
+}
+.submenu a {
+  padding: 10px;
+}
+.submenu.open .submenu-items {
+  display: flex;
+}
+</style>
 </head>
-<body><div class="menu" id="menu">
+<body>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="menu" id="menu">
+<div class="menu-close" onclick="toggleMenu()">✕</div>
 <a href="#">Главная</a>
+<div class="submenu">
+<a href="#" onclick="toggleSubmenu(event)">Обновления ▼</a>
+<div class="submenu-items">
+<a href="#">Лог обновлений</a>
+<a href="#">Грядущие фичи</a>
+</div>
+</div>
 <a href="#">О нас</a>
-<a href="#">Обновления</a>
 <a href="#">Как играть</a>
 </div>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+
 <nav class="menu" id="menu">
 <a href="index.html">Главная</a>
 <a href="about.html">О сервере</a>
@@ -94,9 +123,22 @@
 <p>ОБНОВЛЕНИЕ СКОРО</p>
 </div>
 <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.style.right = menu.style.right === "0px" ? "-250px" : "0px";
-    }
-  </script></body>
+let isOpen = false;
+const menu = document.getElementById("menu");
+
+function toggleMenu() {
+  isOpen = !isOpen;
+  menu.classList.toggle("open", isOpen);
+  menu.classList.toggle("closed", !isOpen);
+}
+
+function toggleSubmenu(event) {
+  event.preventDefault();
+  const submenu = event.target.closest('.submenu');
+  submenu.classList.toggle('open');
+}
+
+// Установим изначальное состояние
+menu.classList.add("closed");
+</script></body>
 </html>
