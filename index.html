@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SunRise Project | Главная</title>
   
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
     body, html {
       margin: 0;
@@ -61,6 +61,31 @@
       color: #ddd;
       line-height: 1.6em;
     }
+    .center-title {
+      display: flex;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .center-title h1 {
+      font-size: 3em;
+      color: #00ccff;
+      margin-bottom: 20px;
+    }
+    .connect-btn {
+      background: #00ccff;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .connect-btn:hover {
+      background: #0099cc;
+    }
   </style>
   <script>
     function toggleMenu() {
@@ -68,21 +93,22 @@
       menu.classList.toggle('active');
     }
   </script>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <nav id="menu" class="menu">
-    <a href="index.html">Главная</a>
-    <a href="about.html">О сервере</a>
-    <a href="https://docs.google.com/document/d/1gqu_FplqKuKloGUwmP46B8GJj_GUu9u0vacpQm87q4w/edit?usp=sharing" target="_blank">Правила</a>
-    <a href="update.html">Обновления</a>
-    <a href="howto.html">Инструкция</a>
-  </nav>
 
 </head>
 <body>
-  <div class="section">
-    <h2>SunRise Project</h2>
-    <p>Добро пожаловать на SCP-сервер Garry's Mod. Исследуй, выживай, контролируй.</p>
-    <p><a href="steam://connect/5.42.211.112:24220" style="color:#00ccff;">Подключиться к серверу</a></p>
+  
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<nav id="menu" class="menu">
+  <a href="index.html">Главная</a>
+  <a href="about.html">О сервере</a>
+  <a href="https://docs.google.com/document/d/1gqu_FplqKuKloGUwmP46B8GJj_GUu9u0vacpQm87q4w/edit?usp=sharing" target="_blank">Правила</a>
+  <a href="update.html">Обновления</a>
+  <a href="howto.html">Инструкция</a>
+</nav>
+
+  <div class="center-title">
+    <h1>SunRise Project</h1>
+    <a href="steam://connect/5.42.211.112:24220" class="connect-btn">Подключиться к серверу</a>
   </div>
 </body>
 </html>
