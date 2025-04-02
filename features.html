@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>SunRise Project</title>
+  <title>Фичи проекта | SunRise Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -81,9 +80,15 @@
       cursor: pointer;
       border-radius: 5px;
       transition: 0.3s;
+      margin-top: 20px;
     }
     .button:hover {
       background: linear-gradient(45deg, #ff6f6f, #ff3131);
+    }
+    ul, ol {
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto;
     }
   </style>
 </head>
@@ -100,23 +105,21 @@
 
   <div class="hero">
     <h1>Фичи проекта</h1>
-    <p>Вы находитесь на странице: features.html</p>
+    
+<ul>
+  <li>Система рангов SCP</li>
+  <li>Инвентарь и лут</li>
+  <li>Экономика и магазин</li>
+  <li>Мультикомандные сценарии</li>
+</ul>
+
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    function toggleMenu() {
       const menu = document.getElementById("menu");
-      const toggleButton = document.querySelector(".menu-toggle");
-      const closeButton = document.querySelector(".menu-close");
-
-      toggleButton.addEventListener("click", () => {
-        menu.classList.toggle("open");
-      });
-
-      closeButton.addEventListener("click", () => {
-        menu.classList.remove("open");
-      });
-    });
+      menu.classList.toggle("open");
+    }
   </script>
 </body>
 </html>
